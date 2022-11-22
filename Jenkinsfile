@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git repo & clean') {
             steps {
-               bat "rmdir  /s /q fruteriasss"
+              // bat "rmdir  /s /q fruteriasss"
                 bat "git clone "
                 bat "mvn clean -f fruteriasss"
             }
