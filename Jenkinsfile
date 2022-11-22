@@ -3,24 +3,19 @@ pipeline {
     stages {
         stage('git repo & clean') {
             steps {
-               bat "rmdir  /s /q fruteriasss"
-                bat "git clone "
+              // bat "rmdir  /s /q fruteriasss"
+                bat "git clone https://github.com/estudiante957/fruteriasss.git "
                 bat "mvn clean -f fruteriasss"
             }
         }
-        stage('install') {
+        stage('Build') {
             steps {
-                bat "mvn install -f fruteriasss"
+                bat "Building -f fruteriasss"
             }
         }
-        stage('test') {
+        stage('Test') {
             steps {
-                bat "mvn test -f fruteriasss"
-            }
-        }
-        stage('package') {
-            steps {
-                bat "mvn package -f fruteriasss"
+                bat "Testing -f fruteriasss"
             }
         }
     }
