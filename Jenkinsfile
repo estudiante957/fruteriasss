@@ -18,10 +18,5 @@ pipeline {
                 bat "mvn test -f fruteriasss"
             }
         }
-        stage('package') {
-            steps {
-                bat "mvn package -f fruteriasss"
-            }
-        }
     }
 }
