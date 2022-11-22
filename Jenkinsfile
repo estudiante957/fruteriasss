@@ -1,21 +1,23 @@
 pipeline {
     agent any
+    
+    tools {nodejs "Node"}
     stages {
-        stage('git repo & clean') {
+        stage('git') {
             steps {
               // bat "rmdir  /s /q fruteriasss"
                 bat "git clone https://github.com/estudiante957/fruteriasss.git "
-                bat "mvn clean -f fruteriasss"
+                
             }
         }
         stage('Build') {
             steps {
-                bat "Building -f fruteriasss"
+                bat "npm install"
             }
         }
         stage('Test') {
             steps {
-                bat "Testing -f fruteriasss"
+                bat "Node test"
             }
         }
     }
